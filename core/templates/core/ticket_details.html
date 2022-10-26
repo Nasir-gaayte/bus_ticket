@@ -1,0 +1,33 @@
+{% extends 'core/home.html' %}
+
+{% block content %}
+<div class="mt-5">
+    <div class="container">
+        <table class="table-info">
+            <thead>
+                <tr class="table-success">
+                    <th>#</th>
+                    <th>COSTUMER</th>
+                    <th>DESTENSION</th>
+                    <th>DATE</th>
+                    <th>TICKET COST</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ticket in tickets %}
+                <tr>
+                    <td>{{forloop.conuter}}</td>
+                    <td>{{ticket.name}}</td>
+                    <td>{{ticket.to}}</td>
+                    <td>{{ticket.date}}</td>
+                    <td>{{ticket.total}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        <button><a href="{% url 'home' %}">Back</a></button>
+    </div>
+</div>
+{% endblock content %}
+    

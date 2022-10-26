@@ -1,4 +1,5 @@
-.cta body {
+.cta
+body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
 }
@@ -55,18 +56,22 @@ h6 {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
+
 @keyframes animate-preloader {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -137,6 +142,7 @@ h6 {
     padding: 15px 0;
   }
 }
+
 /* Get Startet Button */
 .get-started-btn {
   margin-left: 25px;
@@ -161,6 +167,7 @@ h6 {
     padding: 6px 18px;
   }
 }
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -183,7 +190,7 @@ h6 {
   position: relative;
 }
 
-.navbar > ul > li {
+.navbar>ul>li {
   position: relative;
   white-space: nowrap;
   margin: 0 12px;
@@ -210,7 +217,7 @@ h6 {
   margin-left: 5px;
 }
 
-.navbar > ul > li > a:before {
+.navbar>ul>li>a:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -224,7 +231,7 @@ h6 {
 }
 
 .navbar a:hover:before,
-.navbar li:hover > a:before,
+.navbar li:hover>a:before,
 .navbar .active:before {
   visibility: visible;
   width: 100%;
@@ -233,7 +240,7 @@ h6 {
 .navbar a:hover,
 .navbar .active,
 .navbar .active:focus,
-.navbar li:hover > a {
+.navbar li:hover>a {
   color: #fff;
 }
 
@@ -271,11 +278,11 @@ h6 {
 
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
-.navbar .dropdown ul li:hover > a {
+.navbar .dropdown ul li:hover>a {
   color: #009961;
 }
 
-.navbar .dropdown:hover > ul {
+.navbar .dropdown:hover>ul {
   opacity: 1;
   top: 100%;
   visibility: visible;
@@ -287,7 +294,7 @@ h6 {
   visibility: hidden;
 }
 
-.navbar .dropdown .dropdown:hover > ul {
+.navbar .dropdown .dropdown:hover>ul {
   opacity: 1;
   top: 0;
   left: 100%;
@@ -298,10 +305,12 @@ h6 {
   .navbar .dropdown .dropdown ul {
     left: -90%;
   }
-  .navbar .dropdown .dropdown:hover > ul {
+
+  .navbar .dropdown .dropdown:hover>ul {
     left: -100%;
   }
 }
+
 /**
 * Mobile Navigation 
 */
@@ -318,10 +327,12 @@ h6 {
   .mobile-nav-toggle {
     display: block;
   }
+
   .navbar ul {
     display: none;
   }
 }
+
 .navbar-mobile {
   position: fixed;
   overflow: hidden;
@@ -361,14 +372,14 @@ h6 {
 }
 
 .navbar-mobile a:hover:before,
-.navbar-mobile li:hover > a:before,
+.navbar-mobile li:hover>a:before,
 .navbar-mobile .active:before {
   visibility: hidden;
 }
 
 .navbar-mobile a:hover,
 .navbar-mobile .active,
-.navbar-mobile li:hover > a {
+.navbar-mobile li:hover>a {
   color: #009961;
 }
 
@@ -403,11 +414,11 @@ h6 {
 
 .navbar-mobile .dropdown ul a:hover,
 .navbar-mobile .dropdown ul .active:hover,
-.navbar-mobile .dropdown ul li:hover > a {
+.navbar-mobile .dropdown ul li:hover>a {
   color: #009961;
 }
 
-.navbar-mobile .dropdown > .dropdown-active {
+.navbar-mobile .dropdown>.dropdown-active {
   display: block;
 }
 
@@ -529,37 +540,44 @@ h6 {
     background-attachment: fixed;
   }
 }
+
 @media (max-width: 768px) {
   #hero h1 {
     font-size: 28px;
     line-height: 36px;
   }
+
   #hero h2 {
     font-size: 18px;
     line-height: 24px;
     margin-bottom: 30px;
   }
 }
+
 @-webkit-keyframes pulsate-btn {
   0% {
     transform: scale(0.6, 0.6);
     opacity: 1;
   }
+
   100% {
     transform: scale(1, 1);
     opacity: 0;
   }
 }
+
 @keyframes pulsate-btn {
   0% {
     transform: scale(0.6, 0.6);
     opacity: 1;
   }
+
   100% {
     transform: scale(1, 1);
     opacity: 0;
   }
 }
+
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
@@ -619,7 +637,7 @@ section {
   position: relative;
 }
 
-.about .content ul li + li {
+.about .content ul li+li {
   margin-top: 10px;
 }
 
@@ -757,6 +775,7 @@ section {
     background-attachment: scroll;
   }
 }
+
 @media (min-width: 769px) {
   .cta .cta-btn-container {
     display: flex;
@@ -764,6 +783,7 @@ section {
     justify-content: flex-end;
   }
 }
+
 /*--------------------------------------------------------------
 # Features
 --------------------------------------------------------------*/
@@ -875,6 +895,7 @@ section {
     background-attachment: fixed;
   }
 }
+
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
@@ -1020,7 +1041,7 @@ section {
   font-size: 15px;
 }
 
-.portfolio-details .portfolio-info ul li + li {
+.portfolio-details .portfolio-info ul li+li {
   margin-top: 10px;
 }
 
@@ -1201,7 +1222,7 @@ section {
   list-style: none;
 }
 
-.faq .accordion-list li + li {
+.faq .accordion-list li+li {
   margin-top: 15px;
 }
 
@@ -1257,25 +1278,30 @@ section {
 }
 
 @media (max-width: 1024px) {
+
   .faq .content,
-.faq .accordion-list {
+  .faq .accordion-list {
     padding-left: 0;
     padding-right: 0;
   }
 }
+
 @media (max-width: 992px) {
   .faq {
     /* img {
       padding-top: 30px;
     } */
   }
+
   .faq .content {
     padding-top: 30px;
   }
+
   .faq .accordion-list {
     padding-bottom: 30px;
   }
 }
+
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
@@ -1338,7 +1364,7 @@ section {
   font-weight: 600;
 }
 
-.contact .php-email-form .sent-message br + br {
+.contact .php-email-form .sent-message br+br {
   margin-top: 25px;
 }
 
@@ -1400,18 +1426,22 @@ section {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
+
 @keyframes animate-loading {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
+
 /*--------------------------------------------------------------
 # Breadcrumbs
 --------------------------------------------------------------*/
@@ -1427,6 +1457,7 @@ section {
     margin-top: 63px;
   }
 }
+
 .breadcrumbs h2 {
   font-size: 26px;
   font-weight: 500;
@@ -1441,11 +1472,11 @@ section {
   font-size: 14px;
 }
 
-.breadcrumbs ol li + li {
+.breadcrumbs ol li+li {
   padding-left: 10px;
 }
 
-.breadcrumbs ol li + li::before {
+.breadcrumbs ol li+li::before {
   display: inline-block;
   padding-right: 10px;
   color: #424242;
@@ -1520,4 +1551,4 @@ section {
 
 #footer .credits a:hover {
   color: #009961;
-}/*# sourceMappingURL=main.css.map */
+}

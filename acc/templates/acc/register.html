@@ -1,0 +1,21 @@
+{% extends 'core/home.html' %}
+
+{% block content %}
+
+    <div class="mt-5">
+        <div class="container">
+
+            <h1>REGISTER</h1>
+            <form method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit">register</button>
+            </form>
+        </div>
+        <br>
+        <br>
+        <button  class="btn btn-dark" type="submit" ><a href="{% url 'home' %}"> Back</a></button>
+    </div>
+         
+{% endblock content %}
+    
