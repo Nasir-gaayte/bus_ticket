@@ -1,13 +1,16 @@
 {% extends 'core/home.html' %}
-
+{% load crispy_forms_tags %}
 {% block content %}
 <div class="container mt-5" style="margin-top: 100px;">
     <div class="container" style="margin-top: 100px;">
-      <form  class="form-group" method="POST">
-        {% csrf_token %}
-        {{form.as_p}}
-        <button type="submit">ADD TICKET</button>
-      </form>
+        <div class="form-group">
+
+            <form  method="POST" >
+                {% csrf_token %}
+                {{form|crispy}}
+                <button type="submit">ADD TICKET</button>
+            </form>
+        </div>
 
       <button><a href="{% url 'details' %}">view detail</a></button>
         

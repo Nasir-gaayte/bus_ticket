@@ -3,29 +3,34 @@
 {% block content %}
 <div class="mt-5">
     <div class="container">
-        <table class="table-info">
+        <table class="table">
+            <h1><span style="color: rgb(233, 190, 190);">TICKET LIST </span></h1>
             <thead>
-                <tr class="table-success">
-                    <th>#</th>
-                    <th>COSTUMER</th>
-                    <th>DESTENSION</th>
-                    <th>DATE</th>
-                    <th>TICKET COST</th>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">COSTUMER</th>
+                    <th scope="col">DESTENSION</th>
+                    <th scope="col">DATE</th>
+                    <th scope="col">Go date</th>
+                    <th scope="col">TICKET COST</th>
                 </tr>
             </thead>
             <tbody>
                 {% for ticket in tickets %}
                 <tr>
-                    <td>{{forloop.conuter}}</td>
-                    <td>{{ticket.name}}</td>
-                    <td>{{ticket.to}}</td>
-                    <td>{{ticket.date}}</td>
-                    <td>{{ticket.total}}</td>
+                    <td scope="row">{{forloop.counter}}</td>
+                    <td scope="row">{{ticket.name}}</td>
+                    <td scope="row">{{ticket.to}}</td>
+                    <td scope="row">{{ticket.date}}</td>
+                    <td scope="row">{{ticket.go_date}}</td>
+                    <td scope="row">{{ticket.total}}</td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
-        
+        <br>
+        <hr>
+        <button><a href="{% url 'add_ticket' %}">NEW Ticket</a></button><br><br>
         <button><a href="{% url 'home' %}">Back</a></button>
     </div>
 </div>

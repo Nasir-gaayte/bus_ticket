@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'acc',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -132,3 +133,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'img')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = '/'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
