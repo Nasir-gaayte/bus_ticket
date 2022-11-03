@@ -13,18 +13,20 @@
                     <th scope="col">DATE</th>
                     <th scope="col">Go date</th>
                     <th scope="col">TICKET COST</th>
+                    <th scope="col" >VIEW</th>
                 </tr>
             </thead>
             <tbody>
                 {% for ticket in tickets %}
                  
-                <tr onclick=" window.location = '{% url 'costumer_detail' costumer.id %} ' ">
+                <tr  >
                     <td scope="row">{{forloop.counter}}</td>
                     <td scope="row">{{ticket.name}}</td>
                     <td scope="row">{{ticket.to}}</td>
                     <td scope="row">{{ticket.date}}</td>
                     <td scope="row">{{ticket.go_date}}</td>
                     <td scope="row">{{ticket.cost}}</td>
+                    <td scope="row" ><a href="{% url 'costumer_detail' ticket.id %}"><ion-icon name="eye-outline">d</ion-icon></a></td>
                 </tr>
                 {% endfor %}
             </tbody>
@@ -32,7 +34,7 @@
         <br>
         <hr>
         <button><a href="{% url 'add_ticket' %}">NEW Ticket</a></button><br><br>
-        <button><a href="{% url 'home' %}">Back</a></button>
+        <button><a href="{% url 'details' %}">Back</a></button>
     </div>
 </div>
 {% endblock content %}

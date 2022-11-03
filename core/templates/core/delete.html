@@ -12,9 +12,10 @@
                 
               <h5 class="card-title">YOUR TICKET </h5>
               <h6 class="card-subtitle mb-2 text-muted">{{costumer.to}}</h6>
-              <p class="card-text">Mr/Mis<h3> <span style="color: red;"> {{costumer.name}}</span></h3> you ticker its on time {{costumer.date}} to go if you have any update on your time please use the update  </p>
-              <a href="{% url 'update' costumer.id %}" class="card-link">UPDATE</a>
-              <a href="{% url 'delete' costumer.id %}" class="card-link">CANSEL</a>
+              <p class="card-text">Mr/Mis<h3> <span style="color: rgb(75, 167, 48);"> {{costumer.name}}</span></h3> you ticker its on time {{costumer.date}} to go if you have any update on your time please use the update  </p>
+              <p class="card-text"><h1> <span style="color: red;"> are you sure to delete the ticket </span> </h1></p>
+              <a href="#" class="card-link"> <button type="submit">DELETE</button></a>
+             
               
             </div>
           </div>

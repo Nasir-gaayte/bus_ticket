@@ -66,14 +66,30 @@ def get_ticket(request):
     return render(request,'core/add_ticket.html',{'form':form,
                                                    } )        
     
-    
-    
-    
 # class Add_ticket(generic.CreateView):
 #     model= TicketModel
 #     form_class= TicketForm
 #     template_name= 'core/add_ticket.html'
 #     success_url= 'detail'            
+
+
+def update_ticket(request, id):
+    toUp = TicketModel.objects.get(pk=id)
+    if request.method == "POST":
+        form = TicketForm(request.POST or None, instance=toUp)
+        if form.is_valid():
+            
+            form.save()
+            return redirect('details')
+    form = TicketForm(instance=toUp)        
+    return render(request,'core/update.html',{'form':form,
+                                              'toUp':toUp})
+    
+    
+def deleteticket(request, id):
+    toDe=TicketModel.objects.get(pk=id)
+    toDe.delete()
+    return redirect('details')
 
 
 def costumer_detail(request, id):
