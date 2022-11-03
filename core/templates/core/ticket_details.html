@@ -17,13 +17,14 @@
             </thead>
             <tbody>
                 {% for ticket in tickets %}
+                
                 <tr>
                     <td scope="row">{{forloop.counter}}</td>
                     <td scope="row">{{ticket.name}}</td>
                     <td scope="row">{{ticket.to}}</td>
                     <td scope="row">{{ticket.date}}</td>
                     <td scope="row">{{ticket.go_date}}</td>
-                    <td scope="row">{{ticket.total}}</td>
+                    <td scope="row">{{ticket.cost}}</td>
                 </tr>
                 {% endfor %}
             </tbody>

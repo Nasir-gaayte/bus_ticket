@@ -1,4 +1,5 @@
 from re import T
+from venv import create
 from django.shortcuts import render,redirect
 from .models import TicketModel
 from .forms import TicketForm
@@ -17,9 +18,41 @@ def home(request):
 
 def tickets_detail(request):
     tickets = TicketModel.objects.all()
-    wear = TicketModel.objects.filter()
-    print(wear)
-    return render(request,'core/ticket_details.html',{'tickets':tickets})
+    
+    
+
+    for tick in tickets:
+        print(tick.to)
+        costs = tick.to 
+        
+        y = ''
+        if costs == 'bosaso to qardho' :
+                y = 10
+               
+            
+        elif costs== 'bosaso to garowe' :
+                y= 20
+                
+        
+        elif costs == 'bosaso to galkacyo':
+                y = 40
+               
+            
+        elif costs== 'bosaso to lascano':
+                y = 30
+                
+        else: 
+            y = 0
+                 
+    
+    tick.cost = y
+    tick.save()
+    cost= y
+   
+    return render(request,'core/ticket_details.html',{
+        'tickets':tickets,
+        'cost':cost,
+                })
 
 
 
@@ -30,7 +63,8 @@ def get_ticket(request):
             form.save()
             return redirect('details')
     form = TicketForm()
-    return render(request,'core/add_ticket.html',{'form':form})        
+    return render(request,'core/add_ticket.html',{'form':form,
+                                                   } )        
     
     
     
