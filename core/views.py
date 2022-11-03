@@ -74,3 +74,8 @@ def get_ticket(request):
 #     form_class= TicketForm
 #     template_name= 'core/add_ticket.html'
 #     success_url= 'detail'            
+
+
+def costumer_detail(request, id):
+    costumer = TicketModel.objects.get(pk = id)
+    return render(request,'core/costumer_detail.html',{'costumer':costumer})

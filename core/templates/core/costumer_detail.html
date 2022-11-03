@@ -1,0 +1,30 @@
+{% extends 'core/home.html' %}
+
+{% block content %}
+
+<div class="mt-5">
+    <div class="container">
+        <br>
+        <br>
+        <div class="card" style="width: 18rem;">
+            
+            <div class="card-body">
+                
+              <h5 class="card-title">YOUR TICKET </h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{costumer.to}}</h6>
+              <p class="card-text">Mr/Mis<h3> <span style="color: red;"> {{costumer.name}}</span></h3> you ticker its on time {{costumer.date}} to go if you have any update on your time please use the update  </p>
+              <a href="#" class="card-link">UPDATE</a>
+              <a href="#" class="card-link">CANSEL</a>
+              
+            </div>
+          </div>
+          <hr>
+          <br>
+          <br>
+
+        <button><a href="{% url 'add_ticket' %}">NEW Ticket</a></button><br><br>
+        <button><a href="{% url 'home' %}">Back</a></button>
+    </div>
+</div>
+{% endblock content %}
+    

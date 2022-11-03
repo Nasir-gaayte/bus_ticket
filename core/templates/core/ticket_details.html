@@ -17,8 +17,8 @@
             </thead>
             <tbody>
                 {% for ticket in tickets %}
-                
-                <tr>
+                 
+                <tr onclick=" window.location = '{% url 'costumer_detail' costumer.id %} ' ">
                     <td scope="row">{{forloop.counter}}</td>
                     <td scope="row">{{ticket.name}}</td>
                     <td scope="row">{{ticket.to}}</td>
