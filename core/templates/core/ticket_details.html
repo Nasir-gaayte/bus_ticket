@@ -26,7 +26,11 @@
                     <td scope="row">{{ticket.date}}</td>
                     <td scope="row">{{ticket.go_date}}</td>
                     <td scope="row">{{ticket.cost}}</td>
-                    <td scope="row" ><a href="{% url 'costumer_detail' ticket.id %}"><ion-icon name="eye-outline">d</ion-icon></a></td>
+                    <td scope="row" >
+                        <a href="{% url 'costumer_detail' ticket.id %}">
+                        <i class="fa-solid fa-eye"></i>
+                        </a>
+                     </td>
                 </tr>
                 {% endfor %}
             </tbody>
