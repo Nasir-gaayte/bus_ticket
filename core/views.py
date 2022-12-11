@@ -95,3 +95,5 @@ def deleteticket(request, id):
 def costumer_detail(request, id):
     costumer = TicketModel.objects.get(pk = id)
     return render(request,'core/costumer_detail.html',{'costumer':costumer})
+
+
