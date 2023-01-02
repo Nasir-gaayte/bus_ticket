@@ -16,13 +16,24 @@ class Reg(generic.CreateView):
     
 def log(request):
     if request.method == "POST":
-        form = AuthenticationForm(request.POST)
+        form = AuthenticationForm(data=request.POST)
         if form.is_valid():
-            username = form.cleaned_data('username')
-            password = form.cleaned_data('password')
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
                 return redirect('home')
     form = AuthenticationForm()
-    return render(request,'acc/login.html',{'form':form})          
+    return render(request,'acc/login.html',{'form':form})
+
+
+
+
+def logout_req(request):
+    logout(request)
+    return redirect('login')   
+
+
+
+       

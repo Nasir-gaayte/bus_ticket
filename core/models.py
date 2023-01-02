@@ -1,13 +1,3 @@
-from contextlib import nullcontext
-from email.policy import default
-from logging.config import valid_ident
-from multiprocessing.sharedctypes import Value
-from optparse import Values
-from pickle import GLOBAL
-from re import T
-from secrets import choice
-from tabnanny import verbose
-from typing import ValuesView
 from django.db import models
 from django.forms.widgets import NumberInput
 import datetime
