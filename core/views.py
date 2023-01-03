@@ -64,14 +64,15 @@ def get_ticket(request):
             form.save()
             username=form.cleaned_data.get('name')
             email = form.cleaned_data.get('email')
+            
             send_mail(
-                username,
-                'you will get your tecket soon',
+                f'mudane/murow {username}',
+                f"Fdlan kidir A/C 50000 qimaha ticket ka oo dhan {form.cleaned_data.get('cost')}$" ,
                 'doon1wac101@gmail.com',
-                [email],['doon1wac101@gmail.com'],
+                [email],
             )
             send_mail(
-                f"name=  {username} want ot go to {form.cleaned_data.get('to')}",
+                f"name  {username} want ticket form  {form.cleaned_data.get('to')}",
                 f"pay {form.cleaned_data.get('cost')} $ on {form.cleaned_data.get('date')}",
                 email,
                 ['doon1wac101@gmail.com'],
