@@ -1,57 +1,58 @@
-from re import T
-from venv import create
+from django.views import View
 from django.shortcuts import render,redirect
 from .models import TicketModel
 from .forms import TicketForm
-from django.views import generic 
-from django.views.generic import CreateView
+from django.core.mail import send_mail, send_mass_mail
 
-# Create your views here.
 
+
+
+
+# the templates
 
 def home(request):
-   
+    detail= TicketModel.objects.all()
     
-    return render(request,'core/home.html')
+    return render(request,'core/home.html', {
+        'detail':detail,
+        })
 
 
 
 def tickets_detail(request):
     tickets = TicketModel.objects.all()
     
+   
     
 
     for tick in tickets:
         print(tick.to)
         costs = tick.to 
-        
+        global y
         y = ''
         if costs == 'bosaso to qardho' :
-                y = 10
+                y =10
                
             
         elif costs== 'bosaso to garowe' :
-                y= 20
+                y =20
                 
         
         elif costs == 'bosaso to galkacyo':
-                y = 40
+                 y =30
                
             
         elif costs== 'bosaso to lascano':
-                y = 30
+                 y =40
                 
         else: 
             y = 0
-                 
-    
-    tick.cost = y
-    tick.save()
-    cost= y
+        tick.cost = y
+        tick.save()
    
     return render(request,'core/ticket_details.html',{
         'tickets':tickets,
-        'cost':cost,
+        
                 })
 
 
@@ -61,6 +62,23 @@ def get_ticket(request):
         form = TicketForm(request.POST)
         if form.is_valid():
             form.save()
+            username=form.cleaned_data.get('name')
+            email = form.cleaned_data.get('email')
+            send_mail(
+                username,
+                'you will get your tecket soon',
+                'doon1wac101@gmail.com',
+                [email],['doon1wac101@gmail.com'],
+            )
+            send_mail(
+                f"name=  {username} want ot go to {form.cleaned_data.get('to')}",
+                f"pay {form.cleaned_data.get('cost')} $ on {form.cleaned_data.get('date')}",
+                email,
+                ['doon1wac101@gmail.com'],
+            )
+            
+            
+
             return redirect('details')
     form = TicketForm()
     return render(request,'core/add_ticket.html',{'form':form,

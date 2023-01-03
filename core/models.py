@@ -16,8 +16,12 @@ class TicketModel(models.Model):
     }
 
     name = models.CharField(max_length=50, null=True, blank=True)
+    email = models.EmailField()
+    phone = models.IntegerField()
     to = models.CharField('toto', max_length=255, choices=CITY, default='non')
     date = models.DateField(auto_now_add=True)
-    go_date = models.DateField("Date", default=datetime.date.today)
-    cost = models.CharField(max_length=255, default=[])
+    go_date = models.DateField()
+    cost = models.CharField(max_length=255)
 
+    def __str__(self) :
+        return self.name

@@ -1,30 +1,48 @@
 {% extends 'core/home.html' %}
 
 {% block content %}
+<style>
+  #vu{
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+   
+}
+ #but{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+    }
+ #but button{
+  margin: 15px;
+ }   
+</style>
 
-<div class="mt-5">
-    <div class="container">
-        <br>
-        <br>
-        <div class="card" style="width: 18rem;">
-            
-            <div class="card-body">
-                
-              <h5 class="card-title">YOUR TICKET </h5>
-              <h6 class="card-subtitle mb-2 text-muted">{{costumer.to}}</h6>
-              <p class="card-text">Mr/Mis<h3> <span style="color: red;"> {{costumer.name}}</span></h3> you ticker its on time {{costumer.date}} to go if you have any update on your time please use the update  </p>
-              <a href="{% url 'update' costumer.id %}" class="card-link">UPDATE</a>
-              <a href="{% url 'delete' costumer.id %}" class="card-link">CANSEL</a>
+  <div id="vu"  class="container">
+      <br>
+      <br>
+      <div class="card" style="width: 18rem;">
+          
+          <div class="card-body">
               
-            </div>
+            <h5 class="card-title">YOUR TICKET </h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{costumer.to}}</h6>
+            <p class="card-text">Mr/Mis<h3> <span style="color: red;"> {{costumer.name}}</span></h3> you ticker its on time {{costumer.date}} to go if you have any update on your time please use the update  </p>
+            <p class="card-text">cost you - <span style="color:red; font-size:large; " >{{costumer.cost}}$</span> </p>
+            <a href="{% url 'update' costumer.id %}" class="card-link">UPDATE</a>
+            <a href="{% url 'delete' costumer.id %}" class="card-link">CANSEL</a>
+            
           </div>
-          <hr>
-          <br>
-          <br>
+        </div>
+        <hr>
+        <br>
+        <br>
+      </div>
+      <div id="but">
+        <button class="btn btn-outline-success" ><a style="text-decoration: none;" href="{% url 'add_ticket' %}">NEW Ticket</a></button><br><br>
+        <button class="btn btn-outline-dark" ><a style="text-decoration: none;" href="{% url 'home' %}">Back</a></button>
+        </div>
 
-        <button><a href="{% url 'add_ticket' %}">NEW Ticket</a></button><br><br>
-        <button><a href="{% url 'home' %}">Back</a></button>
-    </div>
-</div>
 {% endblock content %}
     

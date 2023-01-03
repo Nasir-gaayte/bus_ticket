@@ -134,3 +134,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = '/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'doon1wac101@gmail.com'
+EMAIL_HOST_PASSWORD = 'brcvoxltakxnxoxl'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

@@ -1,6 +1,30 @@
 {% extends 'core/home.html' %}
 
 {% block content %}
+
+
+<style>
+    #vu{
+      margin-top: 80px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: center;
+     
+  }
+   #but{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+      }
+   a {
+    text-decoration: none;
+   }   
+   #but button{
+    margin: 15px;
+   }   
+  </style>
 <div style="margin-top: 110px; margin-bottom:50px">
     <div class="container">
         <table class="table">
@@ -14,6 +38,7 @@
                     <th scope="col">Go date</th>
                     <th scope="col">TICKET COST</th>
                     <th scope="col" >VIEW</th>
+                    <th scope="col" >Update</th>
                 </tr>
             </thead>
             <tbody>
@@ -31,14 +56,21 @@
                         <i class="fa-solid fa-eye"></i>
                         </a>
                      </td>
+                     <td scope="row" >
+                        <a href="{% url 'update' ticket.id %}">
+                        <i class="fa-solid fa-pen"></i>
+                        </a>
+                     </td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
         <br>
         <hr>
-        <button><a href="{% url 'add_ticket' %}">NEW Ticket</a></button><br><br>
-        <button><a href="{% url 'details' %}">Back</a></button>
+        <div id="but" >
+        <button class="btn btn-outline-success"><a href="{% url 'add_ticket' %}">NEW Ticket</a></button><br><br>
+        <button class="btn btn-outline-dark"><a href="{% url 'home' %}">Back</a></button>
+    </div>
     </div>
 </div>
 {% endblock content %}

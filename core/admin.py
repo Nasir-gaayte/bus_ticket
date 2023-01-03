@@ -6,7 +6,7 @@ from .models import TicketModel
 
 class TicketAdmin(admin.ModelAdmin):
    
-    list_display = ('id', 'name','to', 'date')
+    list_display = ('id', 'name','email','phone','go_date', 'to', 'date')
 
 
 admin.site.register(TicketModel, TicketAdmin)
