@@ -1,5 +1,6 @@
 from django.urls import path 
 from . import views
+from core import api
 # from core.views import Add_ticket
 
 urlpatterns = [
@@ -9,4 +10,6 @@ urlpatterns = [
     path('costumer_detail/<int:id>/',views.costumer_detail,name='costumer_detail'),
     path('update/<id>/',views.update_ticket,name='update'),
     path('delete/<id>/',views.deleteticket,name='delete'),
+    path('ApiList/',api.TicketApiList.as_view(),name='ApiList'),
+    path('ApiDetail/<int:id>/',api.TicketApiDetail.as_view(),name='ApiDetail'),
 ]
