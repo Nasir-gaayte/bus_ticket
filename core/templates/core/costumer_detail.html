@@ -42,6 +42,7 @@
       <div id="but">
         <button class="btn btn-outline-success" ><a style="text-decoration: none;" href="{% url 'add_ticket' %}">NEW Ticket</a></button><br><br>
         <button class="btn btn-outline-dark" ><a style="text-decoration: none;" href="{% url 'home' %}">Back</a></button>
+        <button class="btn btn-outline-dark" ><a style="text-decoration: none;" href="{% url 'doc' costumer.id %}">get the ticket</a></button>
         </div>
 
 {% endblock content %}

@@ -4,7 +4,34 @@ from .models import TicketModel
 from .forms import TicketForm
 from django.core.mail import send_mail, send_mass_mail
 
+from django.http import HttpResponse
+from docx import Document
+from docx.shared import Inches
 
+# text file 
+
+
+def text(request, id):
+    doc = HttpResponse(content_type='docx/plain')
+    doc['Content-Disposition'] = 'attachment; filename=yourticket.docx'
+  
+    doc.writelines('Ticket Online')
+    doc.writelines('welcome to our online serves\n \n')
+    doc.writelines('this is your ticket \n \n \n \n ')
+    
+    lines = []
+    tickests = TicketModel.objects.get(id = id)
+    lines.append(f"mr/mis {tickests.name} \n your ticket from {tickests.to}\n mack showr you pay {tickests.cost}$  ")
+    
+    doc.writelines(lines)
+    
+    
+    
+    
+    return doc
+    
+    
+    
 
 
 
