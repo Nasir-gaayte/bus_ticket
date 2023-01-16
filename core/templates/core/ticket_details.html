@@ -1,0 +1,77 @@
+{% extends 'core/home.html' %}
+
+{% block content %}
+
+
+<style>
+    #vu{
+      margin-top: 80px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: center;
+     
+  }
+   #but{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+      }
+   a {
+    text-decoration: none;
+   }   
+   #but button{
+    margin: 15px;
+   }   
+  </style>
+<div style="margin-top: 110px; margin-bottom:50px">
+    <div class="container">
+        <table id="ticket" class="table">
+            <h1><span style="color: rgb(233, 190, 190);">TICKET LIST </span></h1>
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">COSTUMER</th>
+                    <th scope="col">DESTENSION</th>
+                    <th scope="col">DATE</th>
+                    <th scope="col">Go date</th>
+                    <th scope="col">TICKET COST</th>
+                    <th scope="col" >VIEW</th>
+                    <th scope="col" >Update</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ticket in tickets %}
+                 
+                <tr  >
+                    <td scope="row">{{forloop.counter}}</td>
+                    <td scope="row">{{ticket.name}}</td>
+                    <td scope="row">{{ticket.to}}</td>
+                    <td scope="row">{{ticket.date}}</td>
+                    <td scope="row">{{ticket.go_date}}</td>
+                    <td scope="row">{{ticket.cost}}</td>
+                    <td scope="row" >
+                        <a href="{% url 'costumer_detail' ticket.id %}">
+                        <i class="fa-solid fa-eye"></i>
+                        </a>
+                     </td>
+                     <td scope="row" >
+                        <a href="{% url 'update' ticket.id %}">
+                        <i class="fa-solid fa-pen"></i>
+                        </a>
+                     </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <hr>
+        <div id="but" >
+        <button class="btn btn-outline-success"><a href="{% url 'add_ticket' %}">NEW Ticket</a></button><br><br>
+        <button class="btn btn-outline-dark"><a href="{% url 'home' %}">Back</a></button>
+    </div>
+    </div>
+</div>
+{% endblock content %}
+    

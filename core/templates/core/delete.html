@@ -1,0 +1,31 @@
+{% extends 'core/home.html' %}
+
+{% block content %}
+
+<div class="mt-5">
+    <div class="container">
+        <br>
+        <br>
+        <div class="card" style="width: 18rem;">
+            
+            <div class="card-body">
+                
+              <h5 class="card-title">YOUR TICKET </h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{costumer.to}}</h6>
+              <p class="card-text">Mr/Mis<h3> <span style="color: rgb(75, 167, 48);"> {{costumer.name}}</span></h3> you ticker its on time {{costumer.date}} to go if you have any update on your time please use the update  </p>
+              <p class="card-text"><h1> <span style="color: red;"> are you sure to delete the ticket </span> </h1></p>
+              <a href="#" class="card-link"> <button type="submit">DELETE</button></a>
+             
+              
+            </div>
+          </div>
+          <hr>
+          <br>
+          <br>
+
+        <button><a href="{% url 'add_ticket' %}">NEW Ticket</a></button><br><br>
+        <button><a href="{% url 'home' %}">Back</a></button>
+    </div>
+</div>
+{% endblock content %}
+    

@@ -1,0 +1,49 @@
+{% extends 'core/home.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<style>
+    #vu{
+      margin-top: 80px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: center;
+     
+  }
+   #but{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+      }
+   a {
+    text-decoration: none;
+   }   
+   #but button{
+    margin: 15px;
+   }   
+  </style>
+
+<div id="vu">
+    <div class="card container">
+        <br>
+        <h1>UPDATE YOUR TICKET</h1>
+        <br>
+       
+        <form  method="POST" >
+            {% csrf_token %}
+            {{form|crispy}}
+            <button class="btn btn-outline-primary" type="submit">UPDATE TICKET</button>
+        </form>
+          <hr>
+          <br>
+          <br>
+        </div>
+        <div id="but" >
+        <button class="btn btn-outline-success"><a href="{% url 'add_ticket' %}">NEW Ticket</a></button><br><br>
+        <button class="btn btn-outline-dark" ><a href="{% url 'home' %}">Back</a></button>
+    </div>
+</div>
+{% endblock content %}
+    

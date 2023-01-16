@@ -1,0 +1,17 @@
+{% extends 'core/home.html' %}
+
+{% block content %}
+<div class="mt-5">
+    <div class="container">
+
+        <h1>LOGIN</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">Login</button>
+        </form>
+        <span>To regest ckeck<button class="btn"></button> <a href="{% url 'register' %}">here</a></button></span>
+    </div>
+</div>
+{% endblock content %}
+    

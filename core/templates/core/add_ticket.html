@@ -1,0 +1,46 @@
+{% extends 'core/home.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<style>
+    #vu{
+      margin-top: 80px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: center;
+     
+  }
+   #but{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+      }
+   a {
+    text-decoration: none;
+   }   
+   #but button{
+    margin: 15px;
+   }   
+  </style>
+<div id="vu" class="container " style="margin-top: 100px;">
+    <div>
+        <h1>Get YOUR TICKET NOW</h1>
+    </div>
+    <div class="container card" >
+        <div class="form-group">
+
+            <form  method="POST" >
+                {% csrf_token %}
+                {{form|crispy}}
+                <button class="btn btn-outline-success" type="submit">ADD TICKET</button>
+            </form>
+        </div>
+        <div id="but" >
+      <button class="btn btn-outline-dark" ><a href="{% url 'details' %}">view detail</a></button>
+      <button class="btn btn-outline-dark " type="submit"> <a href="{% url 'home' %}"> back</a></button>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+    
